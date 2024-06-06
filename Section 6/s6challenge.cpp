@@ -29,13 +29,13 @@ This estimate is valid for 30 days
 using namespace std;
 
 void printIntro() {
-    cout << "Frank's Carpet Cleaning Service\nCharges:\n\t$25 per small room\n\t$35 per large room\nSales tax rate is 6%\nEstimates are valid for 30 days\n" << endl;
+    cout << "Hello, welcome to Frank's Carpet Cleaning Service\n" << endl;
 }
 
 int promptSnallRooms() {
     int numSmallRooms {0};
 
-    cout << "Please enter number of small rooms: ";
+    cout << "How many small rooms would you like cleaned? ";
     cin >> numSmallRooms;
 
     return numSmallRooms;
@@ -44,7 +44,7 @@ int promptSnallRooms() {
 int promptLargeRooms() {
     int numLargeRooms {0};
 
-    cout << "Please enter number of large rooms: ";
+    cout << "How many large rooms would you like cleaned? ";
     cin >> numLargeRooms;
     cout << endl;
 
@@ -64,7 +64,7 @@ void printSummary(int numSmallRooms, int numLargeRooms, float pricePerSmallRoom,
     cout << "This estimate is valid for 30 days" << endl;
 }
 
-int main(int argc, char* argv[]) {
+int main() {
     const float pricePerSmallRoom {25.00F};
     const float pricePerLargeRoom {35.00F};
     const float salesTax {0.06F};
