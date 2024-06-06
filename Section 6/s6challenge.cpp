@@ -51,7 +51,7 @@ int promptLargeRooms() {
     return numLargeRooms;
 }
 
-void printSummary(int numSmallRooms, int numLargeRooms, float pricePerSmallRoom, float pricePerLargeRoom, float cost, float tax, float total) {
+void printSummary(int numSmallRooms, int numLargeRooms, float pricePerSmallRoom, float pricePerLargeRoom, float cost, float tax, float total, int expiryDays) {
     cout << "Estimate for carpet cleaning service" << endl;
     cout << "Number of small rooms: " << numSmallRooms << endl;
     cout << "Number of large rooms: " << numLargeRooms << endl;
@@ -61,13 +61,14 @@ void printSummary(int numSmallRooms, int numLargeRooms, float pricePerSmallRoom,
     cout << "Tax: $" << tax << endl;
     cout << "===============================" << endl;
     cout << "Total estimate: $" << total << endl; 
-    cout << "This estimate is valid for 30 days" << endl;
+    cout << "This estimate is valid for " << expiryDays << " days" << endl;
 }
 
 int main() {
     const float pricePerSmallRoom {25.00F};
     const float pricePerLargeRoom {35.00F};
     const float salesTax {0.06F};
+    const int expiryDays {30};
 
     printIntro();
     
@@ -78,5 +79,5 @@ int main() {
     float tax {cost * salesTax};
     float total {cost + tax};
     
-    printSummary(numSmallRooms, numLargeRooms, pricePerSmallRoom, pricePerLargeRoom, cost, tax, total);
+    printSummary(numSmallRooms, numLargeRooms, pricePerSmallRoom, pricePerLargeRoom, cost, tax, total, expiryDays);
 }
