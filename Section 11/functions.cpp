@@ -1,5 +1,8 @@
 /*
     Defining Functions:
+        - Enables modularization of code that can be reused
+        - An example of Abstraction (describing code according to its functionality) 
+
         returntype name(parameter list) {
             statement(s);
             return value;
