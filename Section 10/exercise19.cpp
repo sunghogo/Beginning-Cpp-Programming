@@ -1,55 +1,50 @@
 /*
-Using C++ Strings - Exercise 1
-In this exercise you will create a program that will be used to reformat a name so that it can be read more easily.
+Using C-style Strings
+In this exercise you will create a program that determines the length of a first name and last name individually and then the length of the entire name through the use of the C-style string functions strlen, strcpy, and strcat.
 
-The string variable unformatted_full_name is comprised of two substrings; first_name and last_name in that order. Each substring begins with a capital letter.
+Begin by declaring and initializing the C-style string variable first_name to contain "Bjarne".
+Now, declare and initialize a second C-style string variable last_name to contain "Stroustrup".
+You must also declare a third C-style string variable whole_name but do not initialize it yet. Remember that the variable whole_name must be large enough to contain the first and last name with no whitespaces.
 
-Begin by declaring and initializing the string variable first_name from the string variable unformatted_full_name remembering that when initializing from another string, the first integer within the curly brackets represents the starting index of the substring you wish to copy and the second integer represents the length of the substring.
-
-Next, declare and initialize the string variable last_name by using the assignment operator = and the string function substr on the string variable unformatted_full_name.
-
-Next, declare and initialize the string variable formatted_full_name. This should be done through the use of the concatenation operator + by concatenating the string variables first_name and last_name in that order, and then assigning the concatenated string to formatted_full_name using the assignment operator =.
-
-Now the string variable formatted_full_name contains the string "StephenHawking". We see that the string is no more formatted than the original string variable unformatted_full_name and that is because the addition operator + does not add whitespace between strings when concatenating them.
-
-Fortunately, we can use the string function insert on the string variable formatted_full_name to insert a whitespace between the substrings such that formatted_full_name will then contain the string "Stephen Hawking".
+Now, by using the C-style string function strlen, declare and initialize the variable first_name_length to contain the length of the first_name string and the variable last_name_length to contain the length of the last_name string.
 
 
+Using the C-style string function strcpy, copy the first_name string into the whole_name string variable.
+Now, by using the C-style string function strcat, concatenate the last_name string at the end of the whole_name string.
+Finally, by using the C-style string function strlen, declare and initialize the variable whole_name_length to contain the length of the whole_name string.
 
 You can find my solution by clicking on the solution.txt file on the left pane. But please make sure you give it a go yourself first, and only check the solution if you really get stuck.
 */
 
 #include <iostream>
-#include <string>
-#include <cctype>
+#include <cstring>
 using namespace std;
 
-void cpp_strings() {
+void strings_and_functions() {
     
-    string unformatted_full_name {"StephenHawking"};
-    
-    //----DO NOT MODIFY THE CODE ABOVE THIS LINE----
     //----WRITE YOUR CODE BELOW THIS LINE----
-    size_t last_name_i {};
-    for (size_t i {0}; i < unformatted_full_name.length(); i++) {
-        if (i != 0 && isupper(unformatted_full_name.at(i))){
-            last_name_i = i;
-        }
-    }
+    char first_name[50] {"Bjarne"};
+    char last_name[50] {"Stroustrup"};
+    char whole_name[50] {};
 
-    string first_name {unformatted_full_name.substr(0, last_name_i)};
-    string last_name {unformatted_full_name.substr(last_name_i)};
-    string formatted_full_name {first_name + " " + last_name};
+    size_t first_name_length = strlen(first_name);
+    size_t last_name_length = strlen(last_name);
+
+    strcpy(whole_name, first_name);
+    strcat(whole_name, " ");
+    strcat(whole_name, last_name); 
+
+    size_t whole_name_length = strlen(whole_name) - 1;
     
     
     
     //----WRITE YOUR CODE ABOVE THIS LINE----
     //----DO NOT MODIFY THE CODE BELOW THIS LINE----
     
-    cout << formatted_full_name;
+    cout << "The length of the first name, " << first_name << ", is " << first_name_length << " letters long and the length of the last name, " << last_name << ", is " << last_name_length << " letters long. This means that the length of the whole name must be " << whole_name_length << " letters long.";
 }
 
 int main() {
-    cpp_strings();
+    strings_and_functions();
     return 0;
 }
