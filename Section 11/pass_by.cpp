@@ -2,7 +2,7 @@
     Pass-by-Value vs Pass-by-Reference:
         - Pass-by-Value: Copy of the parameter value is passed
         - Pass-by-Value: Actual reference/"alias" to parameter is passed
-        - By default, function parameters are pass-by-values for primitives and most classes, except for arrays which are pass-by-reference
+        - By default, function parameters are pass-by-values for primitives and most classes/object types, except for arrays which are pass-by-reference
     
         - Define &parameter to Pass-by-Reference (their memory address)
             - More efficient for large data structures
