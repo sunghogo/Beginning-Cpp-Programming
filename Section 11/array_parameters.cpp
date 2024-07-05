@@ -1,6 +1,7 @@
 /*
     Passing Array Parameters:
         - Since an array variable is equal to its memory location in memory, it is MUTABLE by functions
+        - Cannot use a range-based for loop for array parameters since unknown begin
         - Use 'const' keyword in parameter definition to make the arguments read-only
 */
 
