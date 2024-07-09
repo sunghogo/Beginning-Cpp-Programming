@@ -14,8 +14,8 @@
 
     Accessing Pointer Addresses:
         - Variables are stored in unique addresses
-        - use & address unary operator:
-            &variable = address
+        - use & address unary operator to reference their address:
+            &variable
 
     Pointer Sizes:
         - All pointers are the same size (1 word/8 bytes), but can point to types of different sizes
