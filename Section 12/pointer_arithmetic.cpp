@@ -6,7 +6,7 @@
             pointer-- : decrement address by size of pointed type
             pointer + n : increment address by n * sizeof(type)
             pointer - n : decrement address by n * sizeof(type)
-            n = ptr1 - ptr2 : must be same data type
+            n = ptr1 - ptr2 : must be in same array AND data type
             ptr1 == ptr2 : compares pointed addresses
         - Can be used to loop through until sentinenl/terminating value
  */
