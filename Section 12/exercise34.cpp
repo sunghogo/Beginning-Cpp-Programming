@@ -25,8 +25,34 @@ std::string reversed = reverse_string(input);
 // reversed should be "!dlroW ,olleH"
 */
 
-void swap_values(int *value_1,  int *value_2) {
-    *value_1 = *value_2 - *value_1;
-    *value_2 -= *value_1;
-    *value_1 += *value_2;
+// You do NOT have to write a main() function. The main() function is written by me
+// behind the scenes to call your function and test your code.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string reverse_string(const std::string &str);
+
+std::string reverse_string(const std::string &str) {
+    std::string reversed;
+    // Write your code below this line
+    reversed = str;
+    size_t length = str.length();
+    int reverse_pos = length - 1;
+
+    for (size_t i{0}; i < reversed.length(); i++) {
+        reversed[reverse_pos] = str[i];
+        reverse_pos--;
+    }
+    // Write your code abocve this line
+    return reversed;
+}
+
+int main() {
+    string name {"Frank"};
+    cout << reverse_string(name) << endl;
+
+    return 0;
 }
