@@ -62,14 +62,14 @@ int main() {
     cout << "Result: " ;
     print(results, results_size);
     
+    delete [] results;
     cout << endl;
-
     return 0;
 }
 
 void print(const int *const array, size_t size) {
     cout << "[ ";
-    for (size_t i {0}; i < size; i++) cout << *(array + i) << " ";
+    for (size_t i {0}; i < size; i++) cout << array[i] << " ";
     cout << "]" << endl;
 }
 
