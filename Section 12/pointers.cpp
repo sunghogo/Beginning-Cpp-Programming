@@ -1,6 +1,6 @@
 /*
     Pointers:
-        - A variable who value is an address (of another var or func)
+        - A variable whose value is an address (of another var or func)
         - Used to:
             - Access data outside of scope
             - Operate on arrays efficiently

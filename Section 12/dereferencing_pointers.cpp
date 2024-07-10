@@ -4,7 +4,7 @@
         - Use the * dereferencing unary operator to get the value:
             *variable = value
         - Don't be confused by how pointer variables are declared using * and initialized to memory addresses, but then derefenced pointer variables then equal the pointed value
-        - The * operator priority is low so becareful when chaining methods
+        - The * operator priority is low, with right to left associativity, so becareful when chaining methods
 */
 
 #include <iostream>
