@@ -1,5 +1,4 @@
 /*
-
 Reverse an Array using Pointers (Challenging!)
 Exercise: Array Reversal using Pointers
 
