@@ -25,7 +25,7 @@ void display(const vector<string> *const v) {
     cout << endl;
 }
 
-void display(int *array, int sentinel) {
+void display(const int *array, int sentinel) {
     while (*array != sentinel) cout << *array++ << " ";
     cout << endl;
 }
