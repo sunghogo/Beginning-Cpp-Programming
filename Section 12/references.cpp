@@ -5,6 +5,7 @@
             - Cannot be null
             - Cannot be made to refer a different variable after init
         - Similar to constant pointer that is automatically dereferenced
+        - Used specifically to override Pass-by-value behavior
 */
 
 #include <iostream>
