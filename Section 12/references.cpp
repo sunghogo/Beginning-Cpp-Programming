@@ -27,7 +27,7 @@ int main() {
     cout << "ref: " << ref << endl; // 200
 
     cout << "\n------------------------------" << endl;
-    num = 300;
+    ref = 300;
     cout << "num: " << num << endl; // 300
     cout << "ref: " << ref << endl; // 300
 
@@ -40,6 +40,11 @@ int main() {
     cout << "\n------------------------------" << endl;
     for (auto &str: stooges) str = "Funny"; // str is now a reference of each vector element
     for (auto const &str: stooges) cout << str << " " << endl; // Elements changed
+
+    int *ptr {&num};
+    int *&ref_ptr {ptr};
+    cout << &ptr << " " << ptr << " " << *ptr << endl;
+    cout << &ref_ptr << " " << ref_ptr << " " << *ref_ptr << endl;
 
     return 0;
 }
