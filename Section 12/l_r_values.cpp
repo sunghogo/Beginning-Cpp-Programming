@@ -10,7 +10,7 @@
                 - right-hand side expressions
                 - literal
                 - temporary value which is intended to be non-modifiable
-        - Cam ne assigned to l-values explicitly
+        - Can be assigned to l-values explicitly
     
     L-value References:
         - Referencing is done on L-values:
@@ -38,7 +38,7 @@ int main() {
     int max_num = max(20, 30); // max(20, 30) is a temporary value, so R-value
 
     int &ref1 = x; // ref1 is refeence to L-value
-    ref1 = 100;
+    ref1 = 100; // ref1 = x = 100
     // int &ref2 = 100 // Error since 100 is an R-value
 
     int num {10};
