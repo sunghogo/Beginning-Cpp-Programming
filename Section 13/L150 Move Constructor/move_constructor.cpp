@@ -3,7 +3,7 @@
         - Similar to unnamed temporary R-values, temporary objects can be created when using constructors
             - Copy constructors can be called many times automatically due to copy semantics of C++
             = Copy constructors doing deep copy have significant performance bottleneck
-        - The Move constructor moves an object rather than copy it
+        - The Move constructor moves an object's raw pointers rather than copy nad delete new ones
             - Optional but recommended with raw pointers as it is very efficients
             - Instead of making a deep copy of the constructor, simply copies the address of the resource from source to the current object, and null outs the pointer in the source pointer
                 - aka "steals" the data
