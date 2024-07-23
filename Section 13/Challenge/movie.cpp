@@ -1,7 +1,7 @@
 #include <iostream>
 #include "movie.h"
 
-// Constructors
+// Constructors and Destructor
 Movie::Movie(std::string name, std::string rating, int watched)
     : name {name}, rating {rating}, watched {watched} {
 }

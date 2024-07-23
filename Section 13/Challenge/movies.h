@@ -11,7 +11,7 @@
 
 #include <string>
 #include <vector>
-#include "Movie.h"
+#include "movie.h"
 
 class Movie;
 
@@ -19,6 +19,17 @@ class Movies {
 private:
     std::vector<Movie> movies;
 public:
+    // Constructors and Destructor
+    Movies();
+
+    ~Movies();
+
+    // Methods
+    bool add_movie(std::string name, std::string rating, int watched = 0);
+
+    bool increment_watched(std::string name);
+
+    void display() const;
 };
 
 #endif

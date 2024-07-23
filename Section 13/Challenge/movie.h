@@ -22,7 +22,7 @@ private:
     int watched;
 public:
     // Constructors
-    Movie(std::string name_val = "None", std::string rating_val = "0", int watched_val = 0);
+    Movie(std::string name = "None", std::string rating = "0", int watched = 0);
 
     Movie(const Movie &source);
 
