@@ -34,7 +34,7 @@ public:
     // Copy Constructor
     Move(const Move &source);
     // Move Constructor
-    Move(Move &&source) noexcept; // noexcept means function will not throw an except
+    Move(Move &&source) noexcept; // noexcept specifies function will not throw an exception (for optmization for standard library containers like std::vector and moving)
     // Destructor
     ~Move();
 };
@@ -56,7 +56,7 @@ Move::Move(const Move &source)
 }
 
 // Move Constructor
-Move::Move(Move &&source) noexcept // noexcept means function will not throw an except
+Move::Move(Move &&source) noexcept // noexcept specifies function will not throw an exception (for optmization for standard library containers like std::vector and moving)
     : data {source.data} {
         source.data = nullptr;
         cout << "Move constructor - moving resource: " << *data << endl;
