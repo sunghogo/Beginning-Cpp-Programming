@@ -11,20 +11,21 @@ Movies::~Movies() {
 
 // Methods
 bool Movies::add_movie(std::string name, std::string rating, int watched) {
-    for (auto movie: movies) 
-        if (movie.get_name().compare(name) == 0) {
+    for (const Movie &movie: movies) 
+        if (movie.get_name() == name) {
             std::cout << "Error: " << name << " already exists." << std::endl;
             return false;
         }
     movies.push_back(Movie{name, rating, watched});
+    std::cout << name << " added." << std::endl;
     return true;
 }
 
 bool Movies::increment_watched(std::string name) {
-    for (auto movie: movies) 
-        if (movie.get_name().compare(name) == 0) {
+    for (Movie &movie: movies) 
+        if (movie.get_name() == name) {
             movie.increment_watched();
-            std::cout << name << " now watched " << movie.get_watched() << " times." << std::endl;
+            std::cout << name << " watched." << std::endl;
             return true;
         }
     std::cout << "Error: " << name << " does not exist." << std::endl;
@@ -32,14 +33,15 @@ bool Movies::increment_watched(std::string name) {
 }
 
 void Movies::display() const {
-    std::cout << "Movies: ";
-    for (size_t i {0}; i < movies.size(); i++) {
-        size_t last_index = movies.size() - 1;
-        auto movie = movies.at(i);
-        std::cout << movie.get_name();
-        if (i != last_index) std::cout << ", ";
+    if (movies.size() == 0) {
+        std::cout << "No movies to display." << std::endl;
+    } else {
+        std::cout << "===================================================" << std::endl;
+        std::cout << "Movies:" << std::endl;
+        for (const Movie &movie : movies)
+            movie.display();
+        std::cout << "===================================================" << std::endl;
     }
-    std::cout << std::endl;
 }
 
 
