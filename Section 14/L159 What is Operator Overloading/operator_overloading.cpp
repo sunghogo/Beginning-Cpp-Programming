@@ -21,3 +21,20 @@
             - [], (), ->, = operators MUST be declared as member methods
             - Other operators can be declared as member methods or  global functions
 */
+
+#include <iostream>
+#include "MyString.h"
+
+using namespace std;
+
+int main() {
+    MyString empty; // Default Constructor
+    MyString larry("Larry"); // Overloaded Constructor
+    MyString stooge(larry); // Copy Constructor
+
+    empty.display();
+    larry.display();
+    stooge.display();
+
+    return 0;
+}
