@@ -9,22 +9,6 @@
         
 */
 
-/*
-    Operator Overloading: Move Assignment Operator ( = ):
-        - You can choose to overload the move assignment operator
-            - C++ will use the copy assignment operator by default
-            - Move assignment operator more efficient for raw pointer members
-        
-        - Overloading the copy assignment operator (deep copy):
-            Class Declaration:
-                Type &operator=(Type &&rhs);
-
-            Implementation:
-                Type &Type::operator=(Type &&rhs) {
-                    code block...
-                }
-*/
-
 #include <iostream>
 #include <vector>
 #include "MyString.h"
