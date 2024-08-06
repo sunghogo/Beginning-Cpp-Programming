@@ -1,6 +1,8 @@
 #ifndef _MYSTRING_H_
 #define _MYSTRING_H_
 
+#include <iostream>
+
 class MyString {
     // Overloaded Operators as Member Methods
     friend MyString operator-(const MyString &obj);   // Make lowercase

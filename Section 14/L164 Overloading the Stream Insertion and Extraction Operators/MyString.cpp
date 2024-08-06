@@ -1,6 +1,5 @@
+#include <string>
 #include <cstring>
-#include <iostream>
-#include <limits>
 #include "MyString.h"
 
 // Default Constructor
@@ -106,7 +105,13 @@ std::ostream &operator<<(std::ostream &os, const MyString &rhs) {
 std::istream &operator>>(std::istream &in, MyString &rhs) {
     char *buff = new char[1000];
     // in >> buff; // Compiler error
-    in.getline(buff, 1000); // Can no longer chain extractions
+    // in.getline(buff, 1000); // Can no longer chain extractions
+    
+    // Hacky way to get this to work since istream extraction is not working with char*
+    std::string buffer; 
+    in >> buffer;
+    std::strcpy(buff, buffer.c_str());
+    
     rhs = MyString {buff};
     delete [] buff;
     return in;
