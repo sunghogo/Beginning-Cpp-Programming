@@ -101,7 +101,7 @@ MyString operator*(const MyString &obj, size_t num) {
     // OR
     // MyString temp;
     // for (size_t i {1}; i < num; i++)
-    //     temp = temp + *this;
+    //     temp = temp + obj;
     // return temp;
 } 
 
