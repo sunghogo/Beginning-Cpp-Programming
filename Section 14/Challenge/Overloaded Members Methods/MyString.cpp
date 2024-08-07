@@ -1,6 +1,12 @@
 #include <cstring>
 #include "MyString.h"
 
+// Overloaded Stream Insertion
+std::ostream &operator<<(std::ostream &os, const MyString &rhs) {
+    os << rhs.str;
+    return os;
+}
+
 // Constructors
 // Default
 MyString::MyString() 
@@ -61,6 +67,91 @@ MyString &MyString::operator=(MyString &&rhs) {
     rhs.str = nullptr;
     return *this;
 }
+
+// Return Lowercase
+MyString MyString::operator-() const {
+    char *buff = new char[std::strlen(str) + 1];
+    for (size_t i {0}; i < std::strlen(str); i ++)
+        buff[i] = std::tolower(str[i]);
+    MyString temp {buff};
+    delete [] buff;
+    return temp;
+}
+
+// Make Uppercase Prefix
+MyString &MyString::operator++() {
+    for (size_t i {0}; i < std::strlen(str); i++)
+        str[i] = std::toupper(str[i]);
+    return *this;
+}
+
+// Make Uppercase Postfix
+MyString MyString::operator++(int)  {
+    MyString temp (*this);
+   operator++();
+   return temp;
+}
+
+// Equality
+bool MyString::operator==(const MyString &rhs) const {
+    return (std::strcmp(str, rhs.str) == 0);
+}
+
+// Not Equal
+bool MyString::operator!=(const MyString &rhs) const {
+    return (std::strcmp(str, rhs.str) != 0);
+} 
+
+// Less than
+bool MyString::operator<(const MyString &rhs) const {
+    return (std::strcmp(str, rhs.str) < 0);
+}
+
+// Greater than
+bool MyString::operator>(const MyString &rhs) const {
+    return (std::strcmp(str, rhs.str) > 0);
+} 
+
+// Concatenation
+MyString MyString::operator+(const MyString &rhs) const {
+    if (rhs.str[0] == '\0')
+        return *this;
+
+    char *buff = new char[std::strlen(str) + std::strlen(rhs.str) + 1];
+    std::strcpy(buff, str);
+    std::strcat(buff, rhs.str);
+    MyString temp {buff};
+    delete [] buff;
+    return temp;
+} 
+
+// Duplication
+MyString MyString::operator*(size_t num) const {
+    if (num <= 0)
+        return MyString();
+    else if (num == 1)
+        return *this; 
+
+    char *buff = new char[std::strlen(str) * num + 1];
+    std::strcpy(buff, str);
+    for (size_t i {1}; i < num; i++)
+        std::strcat(buff, str);
+    MyString temp {buff};
+    delete [] buff;
+    return temp;
+} 
+
+// Concatenation Assignment
+MyString &MyString::operator+=(const MyString &rhs) {
+    *this = *this + rhs;
+    return *this;
+} 
+
+// Duplication Assignment
+MyString &MyString::operator*=(size_t num) {
+    *this = *this * num;
+    return *this;
+} 
 
 // Methods
 // Display

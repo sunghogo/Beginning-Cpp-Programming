@@ -19,7 +19,18 @@ public:
     // Overloaded Operators
     MyString &operator=(const MyString &rhs); // Copy Assignment
     MyString &operator=(MyString &&rhs); // Move Assignment
-    
+
+    MyString operator-() const; // Return Lowercase
+    MyString &operator++(); // Make Uppercase Prefix
+    MyString operator++(int); // Make Uppercase Postfix
+    bool operator==(const MyString &rhs) const; // Equal
+    bool operator!=(const MyString &rhs) const; // Not Equal
+    bool operator<(const MyString &rhs) const; // Less than
+    bool operator>(const MyString &rhs) const; // Greater than
+    MyString operator+(const MyString &rhs) const; // Concatenation
+    MyString operator*(size_t num) const; // Duplication
+    MyString &operator+=(const MyString &rhs); // Concatenation Assignment
+    MyString &operator*=(size_t num); // Duplication Assignment
 
     // Methods
     void display() const;
