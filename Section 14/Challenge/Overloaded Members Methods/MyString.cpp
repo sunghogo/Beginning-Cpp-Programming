@@ -87,9 +87,9 @@ MyString &MyString::operator++() {
 
 // Make Uppercase Postfix
 MyString MyString::operator++(int)  {
-    MyString temp (*this);
-   operator++();
-   return temp;
+   MyString temp (*this);       // make a copy
+   operator++();                // call pre-increment - make sure you call pre-increment!
+   return temp;                 // return the old value
 }
 
 // Equality
@@ -139,6 +139,12 @@ MyString MyString::operator*(size_t num) const {
     MyString temp {buff};
     delete [] buff;
     return temp;
+
+    // OR
+    // MyString temp;
+    // for (size_t i {1}; i < num; i++)
+    //     temp = temp + *this;
+    // return temp;
 } 
 
 // Concatenation Assignment
