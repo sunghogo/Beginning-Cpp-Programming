@@ -32,8 +32,24 @@
             - Creating new classes from existing classes proving more specialized attributes or operations
         - Inheritance or Class Hierarchies
             - Organization of our inheritance relationships
-        - In UML diagrams:
-            - Derived classes point towards base classes
+    
+    Public Inheritance vs. Composition:
+        - Both allow reuse of existing classes:
+            - Public Inheritance
+                - "Is-A" relationship
+            - Composition
+                - "Has-A" relationship 
+
+        - Composition:
+            class Person {
+            private:
+                std::string name; // has-a name
+                Account account;  // has-a account
+            };
+            
+    In UML diagrams:
+            - Derived classes point towards base classes    
+            - Components/Associated classes are connected sideways
             - Moving up = more generalization
             - Moving down = more specialization
 */
