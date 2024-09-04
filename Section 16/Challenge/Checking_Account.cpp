@@ -10,7 +10,7 @@ bool Checking_Account::withdraw(double amount) {
 }
 
 bool Checking_Account::deposit(double amount) {
-    return Account::withdraw(amount);
+    return Account::deposit(amount);
 }
 
 void Checking_Account::print(std::ostream &os) const {

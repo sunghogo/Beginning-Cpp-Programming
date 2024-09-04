@@ -73,7 +73,32 @@ int main() {
     cout << s << endl;
 
     Account *ptr = new Trust_Account("Leo", 10000, 2.6);
-    cout << *ptr << endl; // Trust Account: Leo: 10000.00, 2.6%, withdrawals: 0
+    cout << *ptr << endl; // Trust Account: Leo: 10000.00, 2.60%, withdrawals: 0
+
+    // Account frank{"Frank", 5000}; // Should not compile
+    // cout << frank << endl;
+
+    Checking_Account frank {"Frank", 5000};
+    cout << frank << endl; // Chceking Account: Frank: 50000.00
+
+    Account *trust = new Trust_Account("James");
+    cout << *trust << endl; // Trust Account: James: 0.00, 0.00%, withdrawals: 0
+
+    Account *p1 = new Checking_Account("Larry", 10000);
+    Account *p2 = new Savings_Account("Moe", 1000, 2.5);
+    Account *p3 = new Trust_Account("Curly");
+
+    std::vector<Account *> accounts {p1, p2, p3};
+
+    display(accounts);
+    deposit(accounts, 1000);
+    withdraw(accounts, 2000);
+
+    display(accounts);
+
+    delete p1;
+    delete p2;
+    delete p3;
 
     return 0;
 }
