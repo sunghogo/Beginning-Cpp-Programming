@@ -14,7 +14,6 @@ Add a Trust account class to the Account hierarchy
 #include "Savings_Account.h"
 
 class Trust_Account : public Savings_Account {
-    friend std::ostream &operator<<(std::ostream &os, const Trust_Account &account);
 private:
     static constexpr const char *def_name = "Unnamed Trust Account";
     static constexpr double def_balance = 0.0;
@@ -31,6 +30,8 @@ public:
     
     bool deposit(double amount) override;
     bool withdraw(double amount) override;
+
+    virtual void print(std::ostream &os) const override;
 };
 
 #endif

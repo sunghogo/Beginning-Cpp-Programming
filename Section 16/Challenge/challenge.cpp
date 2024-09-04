@@ -73,7 +73,7 @@ int main() {
     cout << s << endl;
 
     Account *ptr = new Trust_Account("Leo", 10000, 2.6);
-    cout << *ptr << endl;
+    cout << *ptr << endl; // Trust Account: Leo: 10000.00, 2.6%, withdrawals: 0
 
     return 0;
 }
