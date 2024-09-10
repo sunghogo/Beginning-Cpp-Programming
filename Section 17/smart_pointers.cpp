@@ -31,4 +31,12 @@
 
     Resource Acquisition is Iniitialization (RAII):
         - Common idiom/pattern used in software design based on container object lifetime
+            - RAII objects acquire resources at object initialization time
+        - Rsource Acquisition:
+            - Open a file, allocate memory, acquire a lock, etc...
+        - Is Initialization:
+            - The resource is acquired in a constructor
+        - Resource relinquishing
+            - Happens in the destructor
+                - Close the file, deallocate memory, release the lock, etc..
 */
